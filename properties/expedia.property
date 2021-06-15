@@ -1,0 +1,2 @@
+timeline=css>[data-test-id='arrival-time'] [data-test-id='departure-time']
+price=css>.uitk-lockup-price
