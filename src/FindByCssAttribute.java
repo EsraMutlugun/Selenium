@@ -32,8 +32,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 			WebElement input = driver.findElement(By.cssSelector("[name='keyword']"));
 			assertEquals("Type in your keyword", input.getAttribute("value"));
 			}
+		
 		@Test
-		// Icindeki tum Target olan linkleri bulmak icin for loop calistirilir.
+		// The for loop is run to find all the Target links in it.
 		public void testFindLinksWithTarget() {
 			driver.get("http://localhost:8080/workspace/links.html");
 			List<WebElement> links = driver.findElements(By.cssSelector("a[target]"));

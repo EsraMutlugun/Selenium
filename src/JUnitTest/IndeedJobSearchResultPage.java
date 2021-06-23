@@ -1,4 +1,4 @@
-package hw;
+package JUnitTest;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,12 +13,12 @@ import org.openqa.selenium.support.PageFactory;
 
 
 
-public class IndeedResultPage {
+public class IndeedJobSearchResultPage {
 	@FindAll({ @FindBy(xpath = "//div[@class='jobsearch-SerpJobCard unifiedRow row result clickcard']") })
 	
 	private List<WebElement> results;
 	
-	public IndeedResultPage(WebDriver driver) {
+	public IndeedJobSearchResultPage(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 

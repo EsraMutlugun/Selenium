@@ -1,4 +1,4 @@
-package hw;
+package JUnitTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
-public class Flight {
+public class ExpediaArrowDownButtonTest {
 private WebDriver driver;
 	
 	@Before
@@ -35,42 +35,52 @@ private WebDriver driver;
 	
 	public void flight() throws InterruptedException {
 	
-	 WebElement flightTab = driver.findElement(By.xpath("//span[contains(text(),'Flights')]"));
+	 WebElement icon = driver.findElement(By.xpath("//span[contains(text(),'Flights')]"));
      driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-     flightTab.click();
+     icon.click();
 	
 	
-	WebElement Leaving = driver.findElement( By.cssSelector ("button[class='uitk-faux-input']"));
-	 Leaving.sendKeys("sfo");
+	WebElement leavingbutton = driver.findElement( By.cssSelector ("button[class='uitk-faux-input']"));
+	 leavingbutton.sendKeys("sfo");
+	 
 	 WebDriverWait wait = new WebDriverWait(driver, 10);
 	 wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li[class='uitk-typeahead-result-item has-subtext']")));	
-	 Leaving.sendKeys(Keys.ARROW_DOWN);
+	 
+	 // Write sfo to leaving button
+	 
+	 leavingbutton.sendKeys(Keys.ARROW_DOWN);
 	 WebElement sfo = driver.findElement(By.cssSelector("div[class='truncate']"));
 	 sfo.click();
 	 
 	 
 	 
-	 WebElement Going = driver.findElement(By.xpath("//button[@aria-label='Going to']"));
-     Going.sendKeys("nyc");
+	 WebElement goingbutton = driver.findElement(By.xpath("//button[@aria-label='Going to']"));
+     goingbutton.sendKeys("nyc");
+     
      WebDriverWait wait2 = new WebDriverWait(driver, 10);
      wait2.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[data-stid='location-field-leg1-destination-result-item-button']")));
-     Going.sendKeys(Keys.ARROW_DOWN);
+     
+     goingbutton.sendKeys(Keys.ARROW_DOWN);
      WebElement nyc = driver.findElement(By.xpath("//*[contains(text(),'New York (NYC - All Airports)')]"));
+     
      driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	 nyc.click();
 		
-	 //Click Search Button
+	 //Clicking Search Button
+	 
 	  WebDriverWait wait3 = new WebDriverWait(driver, 10);
-	  WebElement SearchButton=wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@type='submit']")));	
+	  WebElement search =wait3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@type='submit']")));	
+	 
 	  driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
-	  SearchButton.click();
+	  search.click();
 	  
 //	  //Click Show  More Button
+	  
 	  WebDriverWait wait4 = new WebDriverWait(driver, 10);
-	  WebElement ShowMore=wait4.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Show More']")));	
+	  WebElement showmore=wait4.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Show More']")));	
 	  driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	  ShowMore.click();
+	  showmore.click();
 	
 	
 
@@ -97,7 +107,6 @@ private WebDriver driver;
 	 
 
 }
-
 
 
 

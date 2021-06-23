@@ -1,19 +1,19 @@
-package hw;
+package JUnitTest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class IndeedHomePage {
+public class IndeedJobSearchHomePage {
 	private WebDriverWait wait;
 	private WebDriver driver;
 	private static final String URL ="https://www.indeed.com/";
 	
-	public IndeedHomePage(WebDriver driver) {
+	public IndeedJobSearchHomePage(WebDriver driver) {
 		this.driver = driver;
 		this.driver.get(URL);
 	}
 		
-	public IndeedSearchBar getSearchbar() {
-		return new IndeedSearchBar(driver);
+	public IndeedJobSearchBar getSearchbar() {
+		return new IndeedJobSearchBar(driver);
 	}	
 }

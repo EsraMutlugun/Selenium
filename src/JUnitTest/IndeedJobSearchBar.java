@@ -1,4 +1,4 @@
-package hw;
+package JUnitTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class IndeedSearchBar {
+public class IndeedJobSearchBar {
 	private WebDriver driver;
 	
 	@FindBy(xpath="//input[@id='text-input-what']")
@@ -22,14 +22,14 @@ public class IndeedSearchBar {
 	@FindBy(xpath="//button[@type='submit']")
 	public WebElement findButton;
 	
-	public IndeedSearchBar(WebDriver driver) {
+	public IndeedJobSearchBar(WebDriver driver) {
 		this.driver=driver;
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 	
 
 	}	
-	public IndeedResultPage search(String what, String where) {
+	public IndeedJobSearchResultPage search(String what, String where) {
 		
 		searchBoxWhat.sendKeys(what);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -41,7 +41,7 @@ public class IndeedSearchBar {
 		findButton.click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		return new IndeedResultPage(driver);	
+		return new IndeedJobSearchResultPage(driver);	
 	}
 
 }

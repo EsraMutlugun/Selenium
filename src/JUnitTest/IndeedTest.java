@@ -1,4 +1,4 @@
-package hw;
+package JUnitTest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,9 +9,9 @@ public class IndeedTest {
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
 		WebDriver driver = new ChromeDriver();
-		IndeedHomePage page = new IndeedHomePage(driver);
-		IndeedSearchBar bar = page.getSearchbar();
-		IndeedResultPage resultPage = bar.search("QA", "San Jose,CA");
+		IndeedJobSearchHomePage page = new IndeedJobSearchHomePage(driver);
+		IndeedJobSearchBar bar = page.getSearchbar();
+		IndeedJobSearchResultPage resultPage = bar.search("QA", "San Jose,CA");
 		resultPage.printResults();
 		driver.quit();		
 	}	

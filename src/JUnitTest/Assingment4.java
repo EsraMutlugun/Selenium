@@ -1,4 +1,4 @@
-package hw;
+package JUnitTest;
 import java.util.List;
 
 import org.openqa.selenium.By;

@@ -28,7 +28,7 @@ public class FindByCssBasic {
 	}
 	
 	@Test
-	//id ile bulabilmesi icin css selector # sembolunu kullanir
+	//It uses the Css selector # symbol to find it by id
 	public void testFindElementById() {
 		driver.get("http://localhost:8080/workspace/helloworld.html");
 		WebElement h1 = driver.findElement(By.cssSelector("#title"));
@@ -36,7 +36,8 @@ public class FindByCssBasic {
 	}
 	
 	@Test
-	//label if is a class name should use (.) symbolunu kullanir
+	
+	//If label is a class name should use (.) symbol
 	public void testFindElementByClassName() {
 		driver.get("http://localhost:8080/workspace/search.html");
 		WebElement label = driver.findElement(By.cssSelector(".label"));
@@ -44,7 +45,7 @@ public class FindByCssBasic {
 	}
 		
 	@Test
-	// ikinci label seach2 icinde text oldugu icin nokta kullanmiyoruz diger aliyoruz.
+	// Since there is text in the second label seach2, we do not use dots, just wrtie label
 	public void testFindElementByTagName() {
 		driver.get("http://localhost:8080/workspace/search.html");
 		WebElement label = driver.findElement(By.cssSelector("label"));

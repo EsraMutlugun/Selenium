@@ -1,3 +1,5 @@
+
+//Amazon test case for find result of search
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.After;
@@ -11,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class AmazonTest {
 	private WebDriver driver;
 	
+//Before annotation reach driver in first step and after annotation quit from driver after everything is done.
 	@Before
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
